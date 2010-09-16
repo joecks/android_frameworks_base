@@ -58,6 +58,14 @@ import java.util.Map;
  */
 public final class Settings {
 
+        /**
+         *  Enables MultiLink, this will prevent 3G from 
+	 *  switching off while wifi  is running.
+         *  @hide
+         */
+    public static final String MULTILINK_ON = "multilink_on";
+
+
     // Intent actions for Settings
 
     /**
