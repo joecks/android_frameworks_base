@@ -1,0 +1,6 @@
+*MultiLink*
+
+
+Multi Link enables more then one intennet connection simoutanisly to enable quick link switching or bundling features. This is not very useful for  a work  release, but for research, as with "mobile ip":http://en.wikipedia.org/wiki/Mobile_IP .
+
+Details will be provided soon.
