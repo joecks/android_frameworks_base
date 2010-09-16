@@ -1015,7 +1015,7 @@ public class ConnectivityService extends IConnectivityManager.Stub {
 
         // if this is a default net and other default is running
         // kill the one not preferred
-        if (mNetAttributes[type].isDefault()) {
+        if (mNetAttributes[type].isDefault() && !isMultiLinkEnabled() ) {
             if (mActiveDefaultNetwork != -1 && mActiveDefaultNetwork != type) {
                 if ((type != mNetworkPreference &&
                         mNetAttributes[mActiveDefaultNetwork].mPriority >
@@ -1049,6 +1049,12 @@ public class ConnectivityService extends IConnectivityManager.Stub {
         handleConnectivityChange();
         sendConnectedBroadcast(info);
     }
+
+    private boolean isMultiLinkEnabled() {
+               return Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.MULTILINK_ON, 0) != 0;
+    }
+
 
     private void handleScanResultsAvailable(NetworkInfo info) {
         int networkType = info.getType();
