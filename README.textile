@@ -1,6 +1,25 @@
 *MultiLink*
 
 
-Multi Link enables more then one intennet connection simoutanisly to enable quick link switching or bundling features. This is not very useful for  a work  release, but for research, as with "mobile ip":http://en.wikipedia.org/wiki/Mobile_IP .
+Multi Link enables more then one internet connection simoutanisly to enable quick link switching or bundling features. This is not very useful for  a work  release, but for research, as with "mobile ip":http://en.wikipedia.org/wiki/Mobile_IP .
 
-Details will be provided soon.
+To build a system with multilink follow the instructions on "cyanogenmod-wiki":http://wiki.cyanogenmod.com/index.php?title=Compile_CyanogenMod_for_Passion , but after 
+<code> repo init -u git://github.com/CyanogenMod/android.git -b froyo </code>
+
+edit the manifests defualt.xml file 
+
+<code> vi .repo/manifests/default.xml </code> 
+
+and change 2 lines, which are the different repos for the multilink version:
+
+<code>
+&lt;!-- &lt;project path="packages/apps/Settings" name="CyanogenMod/android_packages_apps_Settings" remote="github" /&gt;--&gt;
+&lt;project path="packages/apps/Settings" name="joecks/android_packages_apps_Settings" remote="github" /&gt;
+</code><code>
+&lt;!--  &lt;project path="system/core" name="CyanogenMod/android_system_core" remote="github" /&gt;--&gt;
+&lt;project path="system/core" name="joecks/android_system_core" remote="github" /&gt;
+</code>
+
+then continue the instructions by calling 
+
+<code> repo sync </code> 
