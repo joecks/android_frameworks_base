@@ -58,13 +58,7 @@ import java.util.Map;
  */
 public final class Settings {
 
-        /**
-         *  Enables MultiLink, this will prevent 3G from 
-	 *  switching off while wifi  is running.
-         *  @hide
-         */
-    public static final String MULTILINK_ON = "multilink_on";
-
+    
 
     // Intent actions for Settings
 
@@ -1016,6 +1010,13 @@ public final class Settings {
          */
         public static final Uri CONTENT_URI =
             Uri.parse("content://" + AUTHORITY + "/system");
+
+        /**
+         *  Enables MultiLink, this will prevent 3G from 
+	 *  switching off while wifi  is running.
+         *  @hide
+         */
+        public static final String MULTILINK_ON = "multilink_on";
 
         /**
          * Whether we keep the device on while the device is plugged in.
@@ -3162,6 +3163,8 @@ public final class Settings {
          * Whether the Wi-Fi should be on.  Only the Wi-Fi service should touch this.
          */
         public static final String WIFI_ON = "wifi_on";
+
+      
 
         /**
          * Used to save the Wifi_ON state prior to tethering.
