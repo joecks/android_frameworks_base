@@ -52,14 +52,6 @@ import java.util.HashSet;
  */
 public final class Settings {
 
-        /**
-         *  Enables MultiLink, this will prevent 3G from 
-	 *  switching off while wifi  is running.
-         *  @hide
-         */
-    public static final String MULTILINK_ON = "multilink_on";
-
-
     // Intent actions for Settings
 
     /**
@@ -552,6 +544,7 @@ public final class Settings {
             MOVED_TO_SECURE.add(Secure.WIFI_NETWORKS_AVAILABLE_REPEAT_DELAY);
             MOVED_TO_SECURE.add(Secure.WIFI_NUM_OPEN_NETWORKS_KEPT);
             MOVED_TO_SECURE.add(Secure.WIFI_ON);
+            MOVED_TO_SECURE.add(Secure.MULTILINK_ON);
             MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE);
             MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_AP_COUNT);
             MOVED_TO_SECURE.add(Secure.WIFI_WATCHDOG_BACKGROUND_CHECK_DELAY_MS);
@@ -1813,6 +1806,12 @@ public final class Settings {
         public static final String WIFI_ON = Secure.WIFI_ON;
 
         /**
+         * @deprecated Use {@link android.provider.Settings.Secure#WIFI_ON} instead
+         */
+        @Deprecated
+        public static final String MULTILINK_ON = Secure.MULTILINK_ON;
+
+        /**
          * @deprecated Use
          * {@link android.provider.Settings.Secure#WIFI_WATCHDOG_ACCEPTABLE_PACKET_LOSS_PERCENTAGE}
          * instead
@@ -2404,6 +2403,16 @@ public final class Settings {
          * Whether the Wi-Fi should be on.  Only the Wi-Fi service should touch this.
          */
         public static final String WIFI_ON = "wifi_on";
+
+
+        /**
+         *  Enables MultiLink, this will prevent 3G from 
+	 *  switching off while wifi  is running.
+         *  @hide
+         */
+	    public static final String MULTILINK_ON = "multilink_on";
+
+
 
         /**
          * The acceptable packet loss percentage (range 0 - 100) before trying
